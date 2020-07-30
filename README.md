@@ -1,6 +1,6 @@
 # Capestart Document Links
 
-[Install Steps](https://docs.google.com/document/d/1kcBjjft-5fayZuXwymx_wiW6CjgvYLKILt3ZDSqsaxQ/edit?usp=sharing) <br/>
+[Installation Steps](https://docs.google.com/document/d/1kcBjjft-5fayZuXwymx_wiW6CjgvYLKILt3ZDSqsaxQ/edit?usp=sharing) <br/>
 [End Points](https://docs.google.com/document/d/1TKcqA4qNIOgHNeTCDWNAyv_WrnHRLo7Z6KYrJFomwUM/edit?usp=sharing) <br/>
 [Implementation Plan](https://docs.google.com/document/d/15ku98IwYQ-HC6SAhITKwvS6HtcaCsnpRiDYdAkWzjUE/edit?usp=sharing) <br/>
 [API Screenshots](https://docs.google.com/document/d/1pvyF8hxd4PHPj3ck4NqKKI3W0Tw9aU_LG0ibiuot_D0/edit?usp=sharing) <br/>
