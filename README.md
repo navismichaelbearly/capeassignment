@@ -4,7 +4,6 @@
 [End Points](https://docs.google.com/document/d/1TKcqA4qNIOgHNeTCDWNAyv_WrnHRLo7Z6KYrJFomwUM/edit?usp=sharing) <br/>
 [Implementation Plan](https://docs.google.com/document/d/15ku98IwYQ-HC6SAhITKwvS6HtcaCsnpRiDYdAkWzjUE/edit?usp=sharing) <br/>
 [API Screenshots](https://docs.google.com/document/d/1pvyF8hxd4PHPj3ck4NqKKI3W0Tw9aU_LG0ibiuot_D0/edit?usp=sharing) <br/>
-[Install Steps](https://docs.google.com/document/d/1kcBjjft-5fayZuXwymx_wiW6CjgvYLKILt3ZDSqsaxQ/edit?usp=sharing) <br/>
 [Application Screenshots](https://docs.google.com/document/d/1uwOYfX2AIHHrfD6qOU9qHAnGaN6ktV7PGSBc4R8q8-E/edit?usp=sharing) <br/>
 [Known Issues](https://docs.google.com/document/d/1FD2uisk3iDfrPp8AgeU6p1XQsL39_MAEJ0yg7-PhOo0/edit?usp=sharing)
 
@@ -82,6 +81,20 @@ Quit the server with CONTROL-C
 
 ```
 
-Known Issues:
+# Known Issues:
 
+* Modal window may not close, however the data will get updated.
+* Only ascending table sort.
+* Search not implemented
+* On saving Date, user may encounter have some issues.
+* Minor javascript issue on console, however it will not affect applications.
+* Books will show its authors
 
+# Capestart Document Links
+
+[Install Steps](https://docs.google.com/document/d/1kcBjjft-5fayZuXwymx_wiW6CjgvYLKILt3ZDSqsaxQ/edit?usp=sharing) <br/>
+[End Points](https://docs.google.com/document/d/1TKcqA4qNIOgHNeTCDWNAyv_WrnHRLo7Z6KYrJFomwUM/edit?usp=sharing) <br/>
+[Implementation Plan](https://docs.google.com/document/d/15ku98IwYQ-HC6SAhITKwvS6HtcaCsnpRiDYdAkWzjUE/edit?usp=sharing) <br/>
+[API Screenshots](https://docs.google.com/document/d/1pvyF8hxd4PHPj3ck4NqKKI3W0Tw9aU_LG0ibiuot_D0/edit?usp=sharing) <br/>
+[Application Screenshots](https://docs.google.com/document/d/1uwOYfX2AIHHrfD6qOU9qHAnGaN6ktV7PGSBc4R8q8-E/edit?usp=sharing) <br/>
+[Known Issues](https://docs.google.com/document/d/1FD2uisk3iDfrPp8AgeU6p1XQsL39_MAEJ0yg7-PhOo0/edit?usp=sharing)
