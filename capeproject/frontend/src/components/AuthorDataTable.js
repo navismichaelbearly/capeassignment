@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { NavLink,Route } from "react-router-dom";
 import { Table, Button } from 'reactstrap';
 import ModalForm from './ModalForm'
-import SingleAuthor from './SingleAuthor'
+import AuthorModalDisplay from './AuthorModalDisplay';
 
 class AuthorDataTable extends Component {
     constructor(props) {
@@ -10,10 +10,12 @@ class AuthorDataTable extends Component {
         this.state = {
           data: [],
           loaded: false,
-          placeholder: "Loading"
+          placeholder: "Loading",
         };
+        this.compareBy.bind(this);
+        this.sortBy.bind(this);
       }
-    
+
       componentDidMount() {
         fetch("api/authors")
           .then(response => {
@@ -54,14 +56,28 @@ class AuthorDataTable extends Component {
 
   }
 
-  render() {
+  compareBy(key) {
+    return function (a, b) {
+      if (a[key] < b[key]) return -1;
+      if (a[key] > b[key]) return 1;
+      return 0;
+    };
+  }
 
+  sortBy(key) {
+    let arrayCopy = [...this.state.data];
+    arrayCopy.sort(this.compareBy(key));
+    this.setState({data: arrayCopy});
+  }
+  
+  render() {
     const items = this.state.data.map(item => {
       return (
         <tr key={item.id}>
+          <td>{item.id}</td>
           <td>{item.first_name}</td>
           <td>{item.last_name}</td>
-          <td><NavLink to={"/singleauthor/"+item.id}>Books</NavLink></td>
+          <td><AuthorModalDisplay buttonLabel="Show Books" item={item} updateState={this.props.updateState}/></td>
           <td>
             <div>
               <ModalForm buttonLabel="Edit" item={item} updateState={this.props.updateState}/>
@@ -74,11 +90,13 @@ class AuthorDataTable extends Component {
       })
 
     return (
+      <React.Fragment>
       <Table responsive hover>
         <thead>
           <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <th><div onClick={() => this.sortBy('id')} >Author ID</div></th>
+            <th><div onClick={() => this.sortBy('first_name')} >First Name</div></th>
+            <th><div onClick={() => this.sortBy('last_name')} >Last Name</div></th>
             <th>Authors Books</th>
             <th>Actions</th>
           </tr>
@@ -87,6 +105,7 @@ class AuthorDataTable extends Component {
           {items}
         </tbody>
       </Table>
+    </React.Fragment>
     )
   }
 }

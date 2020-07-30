@@ -10,6 +10,8 @@ class BookDataTable extends Component {
           loaded: false,
           placeholder: "Loading"
         };
+        this.compareBy.bind(this);
+        this.sortBy.bind(this);
       }
     
       componentDidMount() {
@@ -51,7 +53,19 @@ class BookDataTable extends Component {
     }
 
   }
+  compareBy(key) {
+    return function (a, b) {
+      if (a[key] < b[key]) return -1;
+      if (a[key] > b[key]) return 1;
+      return 0;
+    };
+  }
 
+  sortBy(key) {
+    let arrayCopy = [...this.state.data];
+    arrayCopy.sort(this.compareBy(key));
+    this.setState({data: arrayCopy});
+  }
   render() {
 
     const items = this.state.data.map(item => {
@@ -59,8 +73,9 @@ class BookDataTable extends Component {
         <tr key={item.id}>
           <td>{item.name}</td>
           <td>{item.price}</td>
-          <td>{item.published_on}</td>
-          <td>{item.created_on}</td>
+          <td><button>Author(s) List</button></td>
+          <td>{item.published_on.substr(0, 10)}</td>
+          <td>{item.created_on.substr(0, 10)}</td>
           <td>
             <div style={{width:"200px"}}>
               <BookModalForm buttonLabel="Edit" item={item} updateState={this.props.updateState}/>
@@ -76,10 +91,11 @@ class BookDataTable extends Component {
       <Table responsive hover>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Published on</th>
-            <th>Created on</th>
+            <th><div onClick={() => this.sortBy('name')} >Name</div></th>
+            <th><div onClick={() => this.sortBy('price')} >Price</div></th>
+            <th>Author(s)</th>
+            <th><div onClick={() => this.sortBy('published_on')} >Published on</div></th>
+            <th><div onClick={() => this.sortBy('created_on')} >Created on</div></th>
             <th>Action</th>
           </tr>
         </thead>
