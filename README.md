@@ -81,15 +81,6 @@ Quit the server with CONTROL-C
 
 ```
 
-# Known Issues:
-
-* Modal window may not close, however the data will get updated.
-* Only ascending table sort.
-* Search not implemented
-* On saving Date, user may encounter have some issues.
-* Minor javascript issue on console, however it will not affect applications.
-* Books will show its authors
-
 # Capestart Document Links
 
 [Install Steps](https://docs.google.com/document/d/1kcBjjft-5fayZuXwymx_wiW6CjgvYLKILt3ZDSqsaxQ/edit?usp=sharing) <br/>
