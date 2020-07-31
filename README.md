@@ -19,6 +19,8 @@ Apples-MacBook-Pro:capeassignment bearly$ git clone git@github.com:mikebearly/ca
 Apples-MacBook-Pro:capeassignment bearly$ pipenv shell
 Launching subshell in virtual environment…
 bash-3.2$  . /Users/bearly/.local/share/virtualenvs/capeassignment-JEzcDPGH/bin/activate
+
+(capeassignment) bash-3.2$
 ```
 
 2. Starting Python Django server
