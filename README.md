@@ -35,7 +35,7 @@ Using /usr/local/bin/python3.8 (3.8.5) to create virtualenv…
 ✔ Successfully created virtual environment! 
 Virtualenv location: /Users/bearly/.local/share/virtualenvs/capeassignment-ic1kKfP7
 Installing dependencies from Pipfile.lock (b8a475)…
-  🐍   ▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉ 10/10 — 00:00:24
+     ▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉ 10/10 — 00:00:24
 To activate this project's virtualenv, run pipenv shell.
 Alternatively, run a command inside the virtualenv with pipenv run.
 
