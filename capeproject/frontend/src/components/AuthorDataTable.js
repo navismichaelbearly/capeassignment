@@ -5,6 +5,7 @@ import ModalForm from './ModalForm'
 import AuthorModalDisplay from './AuthorModalDisplay';
 
 class AuthorDataTable extends Component {
+  
     constructor(props) {
         super(props);
         this.state = {
