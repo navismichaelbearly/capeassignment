@@ -16,11 +16,34 @@ Installation steps
 ```sh
 Apples-MacBook-Pro:capeassignment bearly$ git clone git@github.com:mikebearly/capeassignment.git
 
+Apples-MacBook-Pro:capeassignment bearly$ cd capeassignment
+
+Apples-MacBook-Pro:capeassignment bearly$ pip3 install pipenv
+
+Apples-MacBook-Pro:capeassignment bearly$ pipenv install
+Warning: the environment variable LANG is not set!
+We recommend setting this in ~/.profile (or equivalent) for proper expected behavior.
+Creating a virtualenv for this project…
+Pipfile: /Users/bearly/capeclone/capeassignment/Pipfile
+Using /usr/local/bin/python3.8 (3.8.5) to create virtualenv…
+⠴ Creating virtual environment...created virtual environment CPython3.8.5.final.0-64 in 884ms
+  creator CPython3Posix(dest=/Users/bearly/.local/share/virtualenvs/capeassignment-ic1kKfP7, clear=False, global=False)
+  seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/Users/bearly/Library/Application Support/virtualenv)
+    added seed packages: pip==20.1.1, setuptools==49.2.0, wheel==0.34.2
+  activators BashActivator,CShellActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
+
+✔ Successfully created virtual environment! 
+Virtualenv location: /Users/bearly/.local/share/virtualenvs/capeassignment-ic1kKfP7
+Installing dependencies from Pipfile.lock (b8a475)…
+  🐍   ▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉ 10/10 — 00:00:24
+To activate this project's virtualenv, run pipenv shell.
+Alternatively, run a command inside the virtualenv with pipenv run.
+
 Apples-MacBook-Pro:capeassignment bearly$ pipenv shell
 Launching subshell in virtual environment…
-bash-3.2$  . /Users/bearly/.local/share/virtualenvs/capeassignment-JEzcDPGH/bin/activate
+bash-3.2$  . /Users/bearly/.local/share/virtualenvs/capeassignment-ic1kKfP7/bin/activate
 
-(capeassignment) bash-3.2$
+(capeassignment) bash-3.2$ pip install django djangorestframework
 ```
 
 2. Starting Python Django server
