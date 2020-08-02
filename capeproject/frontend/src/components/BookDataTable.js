@@ -33,6 +33,26 @@ class BookDataTable extends Component {
             });
           });
       }
+
+      clearSearch() {
+        fetch("api/books")
+          .then(response => {
+            if (response.status > 400) {
+              return this.setState(() => {
+                return { placeholder: "Something went wrong!" };
+              });
+            }
+            return response.json();
+          })
+          .then(data => {
+            this.setState(() => {
+              return {
+                data,
+                loaded: true
+              };
+            });
+          });
+      }
   deleteItem = id => {
     let confirmDelete = window.confirm('Delete item forever?')
     if(confirmDelete){
@@ -53,6 +73,28 @@ class BookDataTable extends Component {
     }
 
   }
+
+  searchItem = searchText => {
+    fetch("api/books/?search="+searchText)
+    .then(response => {
+      if (response.status > 400) {
+        return this.setState(() => {
+          return { placeholder: "Something went wrong!" };
+        });
+      }
+      return response.json();
+    })
+    .then(data => {
+      this.setState(() => {
+        return {
+          data,
+          loaded: true
+        };
+      });
+    });
+
+  }
+
   compareBy(key) {
     return function (a, b) {
       if (a[key] < b[key]) return -1;
@@ -88,6 +130,11 @@ class BookDataTable extends Component {
       })
 
     return (
+      <React.Fragment>
+      <form>
+      <input type="text" placeholder="Search.." name="search" id="search"/>&nbsp;&nbsp;<input type="button" value="Search" onClick={() => this.searchItem(document.getElementById('search').value)}/>&nbsp;&nbsp;<input type="button" value="Clear" onClick={() => this.clearSearch()}/>
+    </form>
+    <br/>
       <Table responsive hover>
         <thead>
           <tr>
@@ -103,6 +150,7 @@ class BookDataTable extends Component {
           {items}
         </tbody>
       </Table>
+      </React.Fragment>
     )
   }
 }

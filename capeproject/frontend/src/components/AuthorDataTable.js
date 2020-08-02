@@ -36,6 +36,49 @@ class AuthorDataTable extends Component {
             });
           });
       }
+
+      clearSearch() {
+        fetch("api/authors")
+          .then(response => {
+            if (response.status > 400) {
+              return this.setState(() => {
+                return { placeholder: "Something went wrong!" };
+              });
+            }
+            return response.json();
+          })
+          .then(data => {
+            this.setState(() => {
+              return {
+                data,
+                loaded: true
+              };
+            });
+          });
+      }
+
+      searchItem = searchText => {
+        fetch("api/authors/?search="+searchText)
+        .then(response => {
+          if (response.status > 400) {
+            return this.setState(() => {
+              return { placeholder: "Something went wrong!" };
+            });
+          }
+          return response.json();
+        })
+        .then(data => {
+          this.setState(() => {
+            return {
+              data,
+              loaded: true
+            };
+          });
+        });
+    
+      }
+
+
   deleteItem = id => {
     let confirmDelete = window.confirm('Delete item forever?')
     if(confirmDelete){
@@ -92,6 +135,10 @@ class AuthorDataTable extends Component {
 
     return (
       <React.Fragment>
+      <form>
+        <input type="text" placeholder="Search.." name="search" id="search"/>&nbsp;&nbsp;<input type="button" value="Search" onClick={() => this.searchItem(document.getElementById('search').value)}/>&nbsp;&nbsp;<input type="button" value="Clear" onClick={() => this.clearSearch()}/>
+      </form>
+      <br/>
       <Table responsive hover>
         <thead>
           <tr>

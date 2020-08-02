@@ -26,12 +26,7 @@ class AuthorAddEdit extends React.Component {
     })
       .then(response => response.json())
       .then(item => {
-        if(Array.isArray(item)) {
-          this.props.addItemToState(item[0])
-          this.props.toggle()
-        } else {
-          console.log('failure')
-        }
+        $('#myModal').modal('hide');
       })
       .catch(err => console.log(err))
   }

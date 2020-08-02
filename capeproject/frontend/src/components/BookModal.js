@@ -21,7 +21,7 @@ class BookModal extends Component {
       return (
       <div>
        
-        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+        <Modal id="myModal" isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle} close={closeBtn}>Books List</ModalHeader>
           <ModalBody>
             <ul>
